@@ -19,11 +19,12 @@ body{background:#F4F1EA;font-family:"Inter",sans-serif;color:#1a1a1a;min-height:
 .hero-contact span{font-size:12px;color:rgba(245,240,232,0.6)}
 .hero-contact span b{color:#C9A84C;font-weight:400}
 .creds-strip{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;align-items:center}
-.cred-pill{background:#fff;border-radius:6px;padding:5px 10px;display:flex;align-items:center;justify-content:center;height:40px}
-.cred-pill img{height:28px;width:auto;max-width:90px;object-fit:contain;display:block}
+.cred-pill{background:#fff;border-radius:6px;padding:8px 14px;display:flex;align-items:center;justify-content:center;height:68px}
+.cred-pill img{height:52px;width:auto;max-width:140px;object-fit:contain;display:block}
 .page{max-width:760px;margin:0 auto;padding:48px 24px 72px}
 .section-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#1B4D2E;margin-bottom:20px}
 .packages{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:48px}
+.pkg-full{grid-column:1/-1}
 .pkg{background:#fff;border-radius:10px;padding:28px;border:1px solid #e2ded6;position:relative}
 .pkg.featured{border:2px solid #1B4D2E}
 .pkg-badge{position:absolute;top:-10px;left:20px;background:#1B4D2E;color:#fff;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
@@ -40,6 +41,22 @@ body{background:#F4F1EA;font-family:"Inter",sans-serif;color:#1a1a1a;min-height:
 .bcard-tag{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px}
 .bcard-title{font-family:"Bebas Neue",sans-serif;font-size:20px;color:#0D1F0F;letter-spacing:.03em;margin-bottom:10px}
 .bcard-body{font-size:12.5px;color:#666;line-height:1.7}
+.retainer{background:linear-gradient(135deg,#0D1F0F 0%,#1B4D2E 100%);border-radius:12px;padding:36px 32px;border:1.5px solid rgba(201,168,76,0.35);margin-bottom:48px;position:relative;overflow:hidden}
+.retainer::before{content:"";position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(201,168,76,0.12);pointer-events:none}
+.retainer::after{content:"";position:absolute;top:-10px;right:-10px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(201,168,76,0.08);pointer-events:none}
+.retainer-header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:24px;flex-wrap:wrap}
+.retainer-title-block{}
+.retainer-badge{display:inline-block;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:#C9A84C;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:10px}
+.retainer-title{font-family:"Bebas Neue",sans-serif;font-size:32px;color:#F5F0E8;letter-spacing:.04em;line-height:1}
+.retainer-subtitle{font-size:13px;color:rgba(245,240,232,0.55);margin-top:6px;letter-spacing:.03em}
+.retainer-price-block{text-align:right;flex-shrink:0}
+.retainer-price{font-family:"Bebas Neue",sans-serif;font-size:42px;color:#C9A84C;line-height:1}
+.retainer-price-note{font-size:11px;color:rgba(245,240,232,0.45);margin-top:4px;letter-spacing:.05em;text-transform:uppercase}
+.retainer-divider{height:1px;background:rgba(201,168,76,0.2);margin-bottom:24px}
+.retainer-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 32px}
+.retainer-feature{font-size:12.5px;color:rgba(245,240,232,0.75);display:flex;gap:9px;align-items:flex-start;line-height:1.5}
+.retainer-feature::before{content:"";width:5px;height:5px;border-radius:50%;background:#C9A84C;flex-shrink:0;margin-top:5px}
+.retainer-cta{margin-top:24px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.15);font-size:12.5px;color:rgba(245,240,232,0.5);letter-spacing:.02em}
 .note{background:#fff;border-radius:10px;padding:22px 24px;border:1px solid #e2ded6;font-size:12.5px;color:#666;line-height:1.7}
 .note b{color:#0D1F0F;font-weight:600}
 .footer{background:#0D1F0F;padding:28px 48px;text-align:center}
@@ -73,10 +90,10 @@ body{background:#F4F1EA;font-family:"Inter",sans-serif;color:#1a1a1a;min-height:
 <div class="page">
 
   <div class="section-label">Rates</div>
-  <div class="packages">
+  <div class="packages" style="grid-template-columns:1fr 1fr 1fr">
     <div class="pkg">
-      <div class="pkg-name">Range Lesson</div>
-      <div class="pkg-duration">1 hour &middot; Driving range</div>
+      <div class="pkg-name">Standard Lesson</div>
+      <div class="pkg-duration">1 hour</div>
       <div class="pkg-price">$80<span>/ session</span></div>
       <div class="pkg-divider"></div>
       <ul class="pkg-features">
@@ -85,10 +102,9 @@ body{background:#F4F1EA;font-family:"Inter",sans-serif;color:#1a1a1a;min-height:
         <li>Drill plan + written recap after every session</li>
       </ul>
     </div>
-    <div class="pkg featured">
-      <div class="pkg-badge">Recommended</div>
+    <div class="pkg">
       <div class="pkg-name">Playing Lesson</div>
-      <div class="pkg-duration">9 holes on course &middot; ~2 hours</div>
+      <div class="pkg-duration">9 holes on course</div>
       <div class="pkg-price">$130<span>/ round</span></div>
       <div class="pkg-divider"></div>
       <ul class="pkg-features">
@@ -96,6 +112,20 @@ body{background:#F4F1EA;font-family:"Inter",sans-serif;color:#1a1a1a;min-height:
         <li>Pre-shot routine &amp; mental approach</li>
         <li>Shot-by-shot feedback throughout the round</li>
         <li>Written recap with key takeaways</li>
+      </ul>
+    </div>
+    <div class="pkg">
+      <div class="pkg-name">Monthly Package</div>
+      <div class="pkg-duration">Focused training programs</div>
+      <div style="font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:2px">Starting at</div>
+      <div class="pkg-price">$500<span>/ month</span></div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-features">
+        <li>2+ lessons per week — range &amp; on-course</li>
+        <li>Daily swing video review &amp; feedback</li>
+        <li>Round recaps — scoring, decisions &amp; patterns</li>
+        <li>Structured practice plan updated monthly</li>
+        <li>Competitive game development &amp; strategy</li>
       </ul>
     </div>
   </div>
